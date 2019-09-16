@@ -1,3 +1,4 @@
+import 'bootstrap/dist/js/bootstrap.bundle';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,6 +10,7 @@ export class HeaderComponent implements OnInit {
 
   myNumber: number;
   myString: number;
+  collapsed = false;
 
   constructor() {
     this.myNumber = 6;
