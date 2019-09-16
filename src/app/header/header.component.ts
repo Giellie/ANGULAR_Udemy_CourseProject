@@ -22,29 +22,3 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 }
-
-
-
-// TESTING VS EXTENSION - json2ts
-// export interface Batter {
-// 	id: string;
-// 	type: string;
-// }
-
-// export interface Batters {
-// 	batter: Batter[];
-// }
-
-// export interface Topping {
-// 	id: string;
-// 	type: string;
-// }
-
-// export interface RootObject {
-// 	id: string;
-// 	type: string;
-// 	name: string;
-// 	ppu: number;
-// 	batters: Batters;
-// 	topping: Topping[];
-// }
