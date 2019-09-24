@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Recipe } from '../recipe.model';
+import { Recipe } from './../recipe.model';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-recipe-list',
@@ -7,6 +7,8 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipe-list.component.scss']
 })
 export class RecipeListComponent implements OnInit {
+
+  @Output() recipeSelectedEvent = new EventEmitter<Recipe>();
 
   recipes: Recipe[] = [
     new Recipe('Pasta', 'Supper yummy italian pizza', './assets/images/recipe1.jpg'),
@@ -19,4 +21,7 @@ export class RecipeListComponent implements OnInit {
   ngOnInit() {
   }
 
+  selectRecipeItem(selectedRecipeItem: Recipe) {
+    this.recipeSelectedEvent.emit(selectedRecipeItem);
+  }
 }

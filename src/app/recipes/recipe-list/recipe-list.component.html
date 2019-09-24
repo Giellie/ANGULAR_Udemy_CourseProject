@@ -5,23 +5,8 @@
 </div>
 <hr>
 <div class="row">
-    <div class="col-xs-12">
-        <div class="row">
-            <a href="#" class="list-group-item clearfix" *ngFor="let recipe of recipes">
-                <div class="row">
-                    <div class="col-xs-10">
-                        <h4>{{recipe.name}}</h4>
-                        <p>{{recipe.description}}</p>
-                    </div>
-                    <div class="col-xs-2">
-                        <span>
-                            <img [src]="recipe.imagePath" alt="" class="img-responsive" style="max-height: 50px;">
-                        </span>
-                    </div>
-                </div>                
-            </a>
-        </div>
-        <app-recipe-item></app-recipe-item>
+    <div class="col-xs-12">        
+        <app-recipe-item (click)="selectRecipeItem(recipeItem)" [recipe]="recipeItem" *ngFor="let recipeItem of recipes"></app-recipe-item>
     </div>
 </div>
 
