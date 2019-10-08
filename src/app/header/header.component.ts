@@ -1,5 +1,5 @@
 import 'bootstrap/dist/js/bootstrap.bundle';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,17 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  myNumber: number;
-  myString: number;
-  collapsed = false;
+  @Output() featureSelected = new EventEmitter<string>();
 
   constructor() {
-    this.myNumber = 6;
-    this.myString = 6;
-
-    const moo = this.myNumber === this.myString ? 'moo' : 'bla';
   }
 
   ngOnInit() {
+  }
+
+  onSelect(feature: string) {
+    this.featureSelected.emit(feature);
   }
 }
